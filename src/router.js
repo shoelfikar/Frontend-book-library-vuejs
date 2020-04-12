@@ -5,6 +5,7 @@ import Login from './view/main/login.vue';
 import FormRegister from './view/main/Form-Register.vue'
 import Dashbord from './view/main/Dashbord.vue'
 import DetailBook from './view/main/DetailBook.vue'
+import Activate from './view/main/Activate.vue'
 
 
 
@@ -20,6 +21,11 @@ const routes = [
                 path: '/login',
                 name: 'Login',
                 component: Login
+            },
+            {
+                path: '/auth',
+                name: 'Activate',
+                component: Activate
             },
             {
                 path: '/register',
