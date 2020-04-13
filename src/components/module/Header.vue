@@ -47,7 +47,7 @@
                     <input type="text" placeholder="Search Book">
                 </div>
                 <div class="logo">
-                    <router-link to="/login"><img src="../../assets/img/home/bookshelf.png" alt=""></router-link>
+                   <img src="../../assets/img/home/bookshelf.png" alt="">
                     <h1>Library</h1>
                 </div>
             </div>

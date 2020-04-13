@@ -133,6 +133,7 @@ export default {
     .gambar-1 img {
         width: 100%;
         height: 150px;
+        object-fit: cover;
         box-sizing: border-box;
     }
     .gambar-1 h2 {

@@ -42,5 +42,6 @@ a{
   margin-left: 20px ;
   font-size: 40px;
   font-weight: 900;
+  color: red;
 }
 </style>

@@ -31,7 +31,7 @@
         <!-- popup delete -->
         <div class="container-close" id="popup-hapus">
             <div class="close-form">
-                <a href=""><img src="../../assets/img/detail/close.png" alt=""></a>
+                <router-link to="/" href=""><img src="../../assets/img/detail/close.png" alt=""></router-link>
                 <!-- <img src="../../assets/img/detail/checked.png" alt="" class="checked"> -->
                 <h2>Yakin Ingin Menghapus Data ?</h2>
                 <div class="tombol">
