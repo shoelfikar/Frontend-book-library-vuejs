@@ -19,11 +19,11 @@
                     <form @submit="login">
                         <div class="form-group mb-2">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control form-control-lg pl-2" id="email" aria-describedby="emailHelp" v-model="email" required>
+                            <input type="email" class="form-control form-control-lg pl-2" id="email" aria-describedby="emailHelp" v-model="email" :class="{'is-invalid': $v.email.$error}" @input="$v.$touch()">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control  form-control-lg pl-2" id="password" aria-describedby="emailHelp" v-model="password">
+                            <input type="password" class="form-control  form-control-lg pl-2" id="password" aria-describedby="emailHelp" v-model="password" :class="{'is-invalid': $v.password.$error}" @input="$v.$touch()">
                         </div>
                         <div class="check">
                             <div>
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="alert alert-warning alert-dismissible fade" role="alert">
-                            <strong>Activate Your Account First</strong> For Login
+                            <strong>{{msg}}</strong>
                             <button type="button" @click="failedLogin" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -52,6 +52,7 @@
 
 <script>
 import axios from 'axios';
+import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
 export default {
     name: 'Login',
     data(){
@@ -59,22 +60,28 @@ export default {
             email: '',
             password: '',
             error: false,
+            msg: '',
+            user: []
         }
     },
     methods: {
         login(e) {
             e.preventDefault();
+            // this.$v.$touch()
+            // if(this.$v.$error)
             axios.post('http://localhost:8000/user/login',{
                 email: this.email,
-                password: this.password
+                password: this.password,
+             
             }).then((res)=>{
                 // 
                 res.data
                 if(res.data.result.status === 0){
+                    this.msg = 'Activasi Akun Anda'
                     document.querySelector('.alert').classList.toggle('show')
-                    this.$route.go('/login')
+                    // this.$route.go('/login')
                 }else{
-                    localStorage.token = res.data.result.token;
+                    localStorage.token = res.data.token;
                     localStorage.idUser = res.data.result.id_user;
                     localStorage.type = res.data.result.type;
                     this.error = false
@@ -84,7 +91,10 @@ export default {
                 // this.success()
             })
             .catch(()=>{
-                this.loginFailed()
+                    this.msg = 'Wrong Email or Password'
+                    document.querySelector('.alert').classList.toggle('show') 
+                // alert('wrong password')
+                // this.loginFailed()
             })
             
         },
@@ -118,6 +128,18 @@ export default {
             delete localStorage.password;
             delete localStorage.idUser
         },
+    },
+    validations: {
+        email: {
+            email,
+            required,
+            minLenght: minLength(4),
+            maxLength: maxLength(50)
+        },
+        password: {
+            required,
+            minLenght: minLength(4)
+        }
     }
 }
 </script>

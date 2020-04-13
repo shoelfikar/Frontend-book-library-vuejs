@@ -69,9 +69,6 @@ export default {
                 console.log(err)
             })
         },
-        getBookDetail(){
-           
-        }
     },
     created(){
       axios.get(`http://localhost:8000/user/${localStorage.idUser}`)

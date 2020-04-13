@@ -11,7 +11,7 @@
             <div class="main-menu">
                 <ul>
                     <li><a href="#">Explore</a></li>
-                    <li><a href="#">History</a></li>
+                   <router-link to="/history"> <li><a href="#">History</a></li></router-link>
                     <div v-if="save.result[0].type == 'admin'">
                         <li><a href="#exampleModal" data-toggle="modal" data-target="#exampleModal">Add book*</a></li>
                     </div>
@@ -132,6 +132,8 @@ export default {
     logout(){
         delete localStorage.password
         delete localStorage.idUser
+        delete localStorage.type
+        delete localStorage.token
         this.$router.go('/')
     },
    
@@ -188,6 +190,7 @@ export default {
             margin-top: 50px;
         }
         .main-menu ul li a{
+            display: inline-block;
             text-decoration: none;
             font-size: 30px;
             color: black;

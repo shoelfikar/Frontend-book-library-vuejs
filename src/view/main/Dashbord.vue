@@ -3,6 +3,7 @@
         <div class="container-1">
             <Header />
             <Sidebar />
+            
             <div class="menu">
                 <Carousel />
                 <CardList />

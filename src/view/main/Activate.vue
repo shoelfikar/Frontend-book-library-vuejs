@@ -17,7 +17,7 @@ export default {
     };
   },
   beforeCreate() {
-    Axios.get(`http://localhost:8000/user/auth?activated=${this.$route.query.activated}`)
+    Axios.get(`http://localhost:8000/user/auth/?activated=${this.$route.query.activated}`)
       .then((res) => {
         this.msg = res.data.err;
         this.code = 1;

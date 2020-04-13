@@ -5,7 +5,7 @@
             <Book v-bind:dataBook="bookValue.result[0]"/>
         </div>
         <!-- <div id="popup-box" class="popup-form"> -->
-        <div class="modal fade " id="popup-box" tabindex="-1" role="dialog"                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade " id="popup-box" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -75,7 +75,6 @@ export default {
     mounted() {
         axios.get(`http://localhost:8000/library/${this.idBook}`).then(res=> {
             this.bookValue = res.data;
-            console.log(res)
         })
     },
     methods: {

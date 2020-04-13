@@ -13,34 +13,41 @@
                 <div class="container">
                    <router-link to="/"> <img src="../../assets/img/login/bookshelf.png" alt="" class="image"></router-link>
                     <h1>Register</h1>
+                    <div class="alert alert-warning alert-dismissible fade" role="alert">
+                            <strong>{{msg}}</strong>
+                            <button type="button"  class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
                     <form @submit="addUser">
                         <div class="form-group mb-2">
                           <label for="fullname">Fullname</label>
-                          <input type="text" class="form-control pl-2" id="fullname" aria-describedby="emailHelp" v-model="fullname">
+                          <input type="text" class="form-control pl-2" id="fullname" aria-describedby="emailHelp" v-model="fullname" :class="{'is-invalid': $v.fullname.$error}" @input="$v.$touch()">
+                        </div>
+                          <div class="form-group mb-2">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control pl-2" id="username" aria-describedby="emailHelp" v-model="username" :class="{'is-invalid': $v.username.$error}" @input="$v.$touch()">
                         </div>
                         <div class="form-group mb-2">
                             <label for="email">Email</label>
-                            <input type="text" class="form-control pl-2" id="email" aria-describedby="emailHelp" v-model="email">
+                            <input type="text" class="form-control pl-2" id="email" aria-describedby="emailHelp" v-model="email" :class="{'is-invalid': $v.email.$error}" @input="$v.$touch()">
                         </div>
                         <div class="form-group mb-2">
                             <label for="phone_number">Phone Number</label>
-                            <input type="text" class="form-control pl-2" id="phone_number" aria-describedby="emailHelp" v-model="phone_number">
+                            <input type="text" class="form-control pl-2" id="phone_number" aria-describedby="emailHelp" v-model="phone_number" :class="{'is-invalid': $v.phone_number.$error}" @input="$v.$touch()">
                         </div>
-                        <div class="form-group mb-2">
+                        <!-- <div class="form-group mb-2">
                             <label for="address">Address</label>
                             <input type="text" class="form-control pl-2" id="address" aria-describedby="emailHelp" v-model="address">
-                        </div>
-                        <div class="form-group mb-2">
+                        </div> -->
+                        <!-- <div class="form-group mb-2">
                             <label for="id_card">Id Card</label>
-                            <input type="text" class="form-control pl-2" id="id_card" aria-describedby="emailHelp" v-model="id_card" required>
-                        </div>
-                        <div class="form-group mb-2">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control pl-2" id="username" aria-describedby="emailHelp" v-model="username" required>
-                        </div>
+                            <input type="text" class="form-control pl-2" id="id_card" aria-describedby="emailHelp" v-model="id_card">
+                        </div> -->
+                      
                         <div class="form-group mb-3">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control pl-2" id="password" aria-describedby="emailHelp" v-model="password" required>
+                            <input type="password" class="form-control pl-2" id="password" aria-describedby="emailHelp" v-model="password" :class="{'is-invalid': $v.password.$error}" @input="$v.$touch()">
                         </div>
                         <button type="submit" class="btn btn-outline-dark">Sign Up</button>
                         <router-link to="/login" type="submit" class="btn btn-outline-dark">Sign In</router-link>
@@ -53,19 +60,21 @@
 
 <script>
     import axios from 'axios'
+    import { required, minLength, maxLength, email,alpha,numeric } from 'vuelidate/lib/validators'
 export default {
     name: 'FormRegister',
     data() {
         return {
 
                 fullname: '',
+                username: '',
                 email: '',
                 phone_number: '',
-                address: '',
-                id_card: '',
-                type: 'user',
-                username: '',
+                // address: '',
+                // id_card: '',
+                // type: 'user',
                 password: '',
+                msg: ''
         }
     },
     methods: {
@@ -73,17 +82,26 @@ export default {
             e.preventDefault();
             axios.post('http://localhost:8000/user/register',{
                 fullname: this.fullname,
+                username: this.username,
                 email: this.email,
                 phone_number: this.phone_number,
-                address: this.address,
-                id_card: this.id_card,
-                type: this.type,
-                username: this.username,
+                // address: this.address,
+                // id_card: this.id_card,
+                // type: this.type,
                 password: this.password
         }).then((res)=> {
                  res.data
-                 alert('Data berhasil di tambah!')
-                 this.$router.push('/login')
+                 this.msg = 'Cek Your Email For Activation'
+                document.querySelector('.alert').classList.toggle('show')
+                //  this.$router.push('/login')
+                this.fullname= '';
+                this.email= '';
+                this.phone_number= '';
+                // this.address= ''
+                // this.id_card= '';
+                // this.type= 'user';
+                this.username= '';
+                this.password= '';
             })
             .catch((err)=>{
                 console.log(err)
@@ -91,14 +109,40 @@ export default {
             this.fullname= '';
             this.email= '';
             this.phone_number= '';
-            this.address= ''
-            this.id_card= '';
+            // this.address= ''
+            // this.id_card= '';
             this.type= 'user';
             this.username= '';
             this.password= '';
         }
     
     },
+     validations: {
+        email: {
+            email,
+            required,
+            minLenght: minLength(4),
+            maxLength: maxLength(50)
+        },
+        password: {
+            required,
+            minLenght: minLength(4)
+        },
+        username: {
+            required,
+            minLenght: minLength(5)
+        },
+        fullname: {
+            alpha,
+            required,
+            minLenght: minLength(5)
+        },
+        phone_number: {
+            numeric,
+            required,
+            minLenght: minLength(5)
+        }
+    }
 }
 </script>
 
@@ -158,5 +202,14 @@ export default {
             height: 40px;
             margin-right: 10px;
             line-height: 40px;
+        }
+        .alert{
+            height: 60px;
+            line-height: 60px;
+            padding-left: 15px;
+            margin-bottom: 15px;
+        }
+        .alert .close{
+            line-height: 30px;
         }
 </style>
