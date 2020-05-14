@@ -69,7 +69,7 @@ export default {
             e.preventDefault();
             // this.$v.$touch()
             // if(this.$v.$error)
-            axios.post('http://localhost:8000/user/login',{
+            axios.post('http://localhost:8000/api/v1/user/login',{
                 email: this.email,
                 password: this.password,
              

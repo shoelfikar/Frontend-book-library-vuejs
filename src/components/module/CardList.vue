@@ -47,7 +47,7 @@ export default {
          }else {
              this.currentPage +=1
          }
-          axios.get(`http://localhost:8000/library/?page=${this.currentPage}`)
+          axios.get(`http://localhost:8000/api/v1/library/?page=${this.currentPage}`)
          .then((res)=> {
           this.books = res.data.result[3]
           this.totalPage = res.data.result[0]
@@ -62,7 +62,7 @@ export default {
         } else {
             this.currentPage -= 1;
         }
-         axios.get(`http://localhost:8000/library/?page=${this.currentPage}`)
+         axios.get(`http://localhost:8000/api/v1/library/?page=${this.currentPage}`)
          .then((res)=> {
           this.books = res.data.result[3]
           this.totalPage = res.data.result[0]
@@ -80,11 +80,11 @@ export default {
           container:null,
           currentPage: 1,
           totalPage: [],
-          url:'http://localhost:8000/library/?page='
+          url:'http://localhost:8000/api/v1/library/?page='
       }
    },
    mounted(){
-      axios.get(`http://localhost:8000/library/?page=${this.currentPage}`)
+      axios.get(`http://localhost:8000/api/v1/library/?page=${this.currentPage}`)
       .then((res)=> {
           this.books = res.data.result[3]
           this.totalPage = res.data.result[0]

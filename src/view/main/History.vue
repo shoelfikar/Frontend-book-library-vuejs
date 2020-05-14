@@ -51,13 +51,13 @@ export default {
     },
     methods: {
         getAllCart(){
-            axios.get(`http://localhost:8000/borrowbooks/${localStorage.idUser}`)
+            axios.get(`http://localhost:8000/api/v1/borrowbooks/${localStorage.idUser}`)
             .then((res)=> {
                 this.loans = res.data.result
             })
         },
         getUserDetail(){
-            axios.get(`http://localhost:8000/user/${localStorage.idUser}`)
+            axios.get(`http://localhost:8000/api/v1/user/${localStorage.idUser}`)
         .then(res => {
             this.user = res.data.result
             this.role = this.user[0].type

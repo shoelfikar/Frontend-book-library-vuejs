@@ -56,7 +56,7 @@ export default {
     },
     methods: {
         getAllData(){
-             axios.get(`http://localhost:8000/library/`)
+             axios.get(`http://localhost:8000/api/v1/library/`)
             .then((res)=> {
                this.buku = res.data
             })

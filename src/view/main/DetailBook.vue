@@ -73,13 +73,13 @@ export default {
     },
     props:["idBook"],
     mounted() {
-        axios.get(`http://localhost:8000/library/${this.idBook}`).then(res=> {
+        axios.get(`http://localhost:8000/api/v1/library/${this.idBook}`).then(res=> {
             this.bookValue = res.data;
         })
     },
     methods: {
         updateBook(){
-            axios.patch(`http://localhost:8000/library/${this.$route.params.idBook}`,{
+            axios.patch(`http://localhost:8000/api/v1/library/${this.$route.params.idBook}`,{
                 isbn: this.bookValue.result[0].isbn,
                 book_title: this.bookValue.result[0].book_title,
                 author: this.bookValue.result[0].author,

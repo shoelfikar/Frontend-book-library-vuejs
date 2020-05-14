@@ -80,7 +80,7 @@ export default {
     methods: {
         addUser(e){
             e.preventDefault();
-            axios.post('http://localhost:8000/user/register',{
+            axios.post('http://localhost:8000/api/v1/user/register',{
                 fullname: this.fullname,
                 username: this.username,
                 email: this.email,

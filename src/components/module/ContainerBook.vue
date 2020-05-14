@@ -60,7 +60,7 @@ export default {
     },
     methods:{
         deleteBook(){
-            axios.delete(`http://localhost:8000/library/${this.$route.params.idBook}`)
+            axios.delete(`http://localhost:8000/api/v1/library/${this.$route.params.idBook}`)
             .then((res)=> {
                 res.data
                 this.$router.push('/')
@@ -71,7 +71,7 @@ export default {
         },
     },
     created(){
-      axios.get(`http://localhost:8000/user/${localStorage.idUser}`)
+      axios.get(`http://localhost:8000/api/v1/user/${localStorage.idUser}`)
       .then(res => {
           this.type = res.data.result[0].type
       })

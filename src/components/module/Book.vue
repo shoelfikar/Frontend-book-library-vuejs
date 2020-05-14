@@ -47,7 +47,7 @@ export default {
     },
     methods: {
         borrowBook() {
-            axios.post('http://localhost:8000/borrowbooks/borrow', {
+            axios.post('http://localhost:8000/api/v1/borrowbooks/borrow', {
                 id_user: this.userData,
                 book_id: this.dataBook.book_id
             })
@@ -63,7 +63,7 @@ export default {
         }
     },
     created(){
-        axios.get(`http://localhost:8000/user/${localStorage.idUser}`)
+        axios.get(`http://localhost:8000/api/v1/user/${localStorage.idUser}`)
         .then((res)=> {
             this.userData = res.data.result[0].id_user
         })

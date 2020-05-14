@@ -65,7 +65,7 @@ export default {
       }
   },
   created(){
-      axios.get(`http://localhost:8000/user/${localStorage.idUser}`)
+      axios.get(`http://localhost:8000/api/v1/user/${localStorage.idUser}`)
       .then(res => {
           this.headside = res.data
       })
@@ -76,7 +76,7 @@ export default {
   methods: {
       searchBooks() {
       axios
-        .get(`http://localhost:8000/library/?search=${this.search}`)
+        .get(`http://localhost:8000/api/v1/library/?search=${this.search}`)
         .then((res) => {
           this.books = res.data.books.rows;
           // console.log(res.data.books.rows);

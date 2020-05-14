@@ -110,7 +110,7 @@ export default {
         formData.append('book_status', this.book_status)
         formData.append('id_category', this.id_category)
         formData.append('publisher',this.publisher)
-        axios.post('http://localhost:8000/library/',formData )
+        axios.post('http://localhost:8000/api/v1/library/',formData )
         
         .then((res)=> {
             res.data
@@ -139,7 +139,7 @@ export default {
    
   },
   created(){
-      axios.get(`http://localhost:8000/user/${localStorage.idUser}`)
+      axios.get(`http://localhost:8000/api/v1/user/${localStorage.idUser}`)
       .then(res => {
           this.save = res.data
       })
