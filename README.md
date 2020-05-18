@@ -23,13 +23,13 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
+* [Features](#Features)
+* [Getting Started](#Requirements)
+* [Installation](#Installation)
+* [Create Environment Variable](#Create Environment Variable)
 * [Screenshots](#screenshots)
-* [Related Project](#related-project-backend)
+* [Contributing](#Contributing)
+* [Related Project](#Related Project)
 * [Contact](#contact)
 
 
