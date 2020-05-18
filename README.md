@@ -6,6 +6,8 @@
   <h2 align="center">Mylibrary Online</h2>
   <p align="center">
     <br />
+    <img src="https://github.com/shoelfikar/Frontend-mylibrary-online-vuejs/blob/master/src/assets/img/login/bookshelf.png" />
+    <br />
     <a href="https://github.com/shoelfikar/mylibrary-online"><strong>Explore the docs »</strong></a>
     <br />
     <br />
