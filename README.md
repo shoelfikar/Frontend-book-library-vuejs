@@ -106,6 +106,6 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-My Email : hapidmochj12@gmail.com
+My Email : sulfikardi25@gmail.com
 
-Project Link: [https://github.com/AdmiralYuuShi/Frontend-HiringChannelApp-WithRedux](https://github.com/AdmiralYuuShi/Frontend-HiringChannelApp-WithRedux)
+Project Link: [https://github.com/shoelfikar/Frontend-mylibrary-online-vuejs](https://github.com/shoelfikar/Frontend-mylibrary-online-vuejs)
