@@ -45,10 +45,10 @@ The Hiring Channel Web is a Website that contains data from Company and Engineer
 - Node.js - Download and Install [Node.js](https://nodejs.org/en/).
 - Vue.js - Download and Install [Vue.js](https://vuejs.org/v2/guide/)
 
-## Usage for development
+## Installation
 
 1. Open your terminal or command prompt
-2. Type `git clone https://github.com/m-joseph27/Library-API.git`
+2. Type `git clone https://github.com/shoelfikar/Frontend-mylibrary-online-vuejs.git`
 3. Open the folder and type `npm install` for install dependencies
 4. Create Environment Variable [here](#create-environment-variable)
 5. Before run this, you must run [backend first](#related-project-backend)
@@ -64,20 +64,6 @@ $ nano .env.local
 ```
 VUE_APP_ROOT_URL=YOUR_HOST_URL
 VUE_APP_SECRET_KEY=YOUR_API_KEY
-```
-### Installation
-
-1. Clone the repo
-```sh
-git clone https://github.com/shoelfikar/Frontend-mylibrary-online-vuejs.git
-```
-2. Install NPM packages
-```sh
-npm install
-```
-3. Add .env file at root folder project, and add following
-```sh
-REACT_APP_API_URL=[Backend API]
 ```
 
 
