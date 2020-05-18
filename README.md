@@ -3,7 +3,7 @@
 <br />
 <p align="center">
 
-  <h2 align="center">Mylibrary Online</h2>
+  <h2 align="center">Frontend-mylibrary-online-vuejs</h2>
   <p align="center">
     <br />
     <img src="https://github.com/shoelfikar/Frontend-mylibrary-online-vuejs/blob/master/src/assets/img/login/bookshelf.png" />
