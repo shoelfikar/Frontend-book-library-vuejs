@@ -29,7 +29,7 @@
 * [Create Environment Variable](#create-environment-variable)
 * [Screenshots](#screenshots)
 * [Contributing](#Contributing)
-* [Related Project](#Related Project)
+* [Related Project](#Related-Project)
 * [Contact](#contact)
 
 
