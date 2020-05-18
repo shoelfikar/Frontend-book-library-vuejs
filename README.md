@@ -99,8 +99,8 @@ Contributions are what make the open source community such an amazing place to b
 
 
 ## Related Project
-* [`Frontend-HiringChannelApp-ReactNative`](https://github.com/AdmiralYuuShi/HiringChannelApp-ReactNative)
-* [`Backend-HiringChannelApp`](https://github.com/AdmiralYuuShi/Backend-HiringChannelApp)
+* [`Frontend-mylibrary-online-vuejs`](https://github.com/shoelfikar/Frontend-mylibrary-online-vuejs)
+* [`Backend-book-library-expressjs`](https://github.com/shoelfikar/Backend-book-library-expressjs)
 
 
 <!-- CONTACT -->
