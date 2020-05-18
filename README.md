@@ -40,21 +40,31 @@
 
 The Hiring Channel Web is a Website that contains data from Company and Engineer, which is made for Engineers to enter their profiles so that Companies can searching for Engineers that match their specifications.
 
-### Built With
+## Requirements
 
-* [ReactJs](https://reactjs.org/)
-* [React Bootstrap](https://react-bootstrap.github.io/)
+- Node.js - Download and Install [Node.js](https://nodejs.org/en/).
+- Vue.js - Download and Install [Vue.js](https://vuejs.org/v2/guide/)
 
+## Usage for development
 
-<!-- GETTING STARTED -->
-## Getting Started
+1. Open your terminal or command prompt
+2. Type `git clone https://github.com/m-joseph27/Library-API.git`
+3. Open the folder and type `npm install` for install dependencies
+4. Create Environment Variable [here](#create-environment-variable)
+5. Before run this, you must run [backend first](#related-project-backend)
+6. Type `npm run serve` for run this app.
 
-### Prerequisites
+## Create Environment Variable
 
-This is an example of how to list things you need to use the software and how to install them.
+```
+$ touch .env.local
+$ nano .env.local
+```
 
-* [nodejs](https://nodejs.org/en/download/)
-
+```
+VUE_APP_ROOT_URL=YOUR_HOST_URL
+VUE_APP_SECRET_KEY=YOUR_API_KEY
+```
 ### Installation
 
 1. Clone the repo
