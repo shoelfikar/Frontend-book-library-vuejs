@@ -2,8 +2,8 @@
   <div>
       <div v-if="!headside.result[0]">
         <div class="header">
-                <div class="login">
-                    <a href="#">Login</a>
+                <div>
+                    <router-link to="/login" class="btn btn-outline-dark mt-3">Login</router-link>
                 </div>
             <div class="content" >
                 <select name="" id="">
@@ -21,7 +21,7 @@
                 <input type="text" placeholder="Search Book">
             </div>
             <div class="logo">
-                <router-link to="/login"><img src="../../assets/img/home/bookshelf.png" alt=""></router-link>
+                <router-link to="/register"><img src="../../assets/img/home/bookshelf.png" alt=""></router-link>
                 <h1>Library</h1>
             </div>
             </div>
@@ -65,33 +65,36 @@ export default {
       }
   },
   created(){
-      axios.get(`http://localhost:8000/api/v1/user/${localStorage.idUser}`)
-      .then(res => {
-          this.headside = res.data
-      })
-      .catch(err=> {
-          console.log(err)
-      })
+      this.getLogin()
   },
   methods: {
+      getLogin(){
+        axios.get(`http://localhost:8000/api/v1/user/${localStorage.idUser}`)
+        .then(res => {
+            this.headside = res.data
+        })
+        .catch(err=> {
+            console.log(err)
+        }) 
+      },
       searchBooks() {
       axios
         .get(`http://localhost:8000/api/v1/library/?search=${this.search}`)
         .then((res) => {
           this.books = res.data.books.rows;
-          // console.log(res.data.books.rows);
-        //   const slider = document.querySelector('.slider');
-        //   const book = document.querySelector('.book');
-        //   if (this.search) {
-        //     slider.style.display = 'none';
-        //     book.style.paddingTop = '100px';
-        //   } else {
-        //     slider.style.display = 'block';
-        //     book.style.paddingTop = '50px';
-        //   }
+          console.log(res.data.books.rows);
+          const slider = document.querySelector('.slider');
+          const book = document.querySelector('.book');
+          if (this.search) {
+            slider.style.display = 'none';
+            book.style.paddingTop = '100px';
+          } else {
+            slider.style.display = 'block';
+            book.style.paddingTop = '50px';
+          }
         })
         .catch(() => {
-          // console.log('Error when load data!');
+          console.log('Error when load data!');
         });
       }
   }
