@@ -35,10 +35,14 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Features
+
+- Users who are not logged in can only view the book
+- Users must sign up and sign in to make a transaction and see their profiles
+- And others
 
 
-The Hiring Channel Web is a Website that contains data from Company and Engineer, which is made for Engineers to enter their profiles so that Companies can searching for Engineers that match their specifications.
+
 
 ## Requirements
 
