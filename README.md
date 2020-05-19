@@ -101,7 +101,7 @@ Contributions are what make the open source community such an amazing place to b
 
 
 ## Related Project
-* [`Frontend-mylibrary-online-vuejs`](https://github.com/shoelfikar/Frontend-mylibrary-online-vuejs)
+* [`Frontend-book-library-vuejs`](https://github.com/shoelfikar/Frontend-book-library-vuejs)
 * [`Backend-book-library-expressjs`](https://github.com/shoelfikar/Backend-book-library-expressjs)
 
 
@@ -110,4 +110,4 @@ Contributions are what make the open source community such an amazing place to b
 
 My Email : sulfikardi25@gmail.com
 
-Project Link: [https://github.com/shoelfikar/Frontend-mylibrary-online-vuejs](https://github.com/shoelfikar/Frontend-mylibrary-online-vuejs)
+Project Link: [Frontend-book-library-vuejs](https://github.com/shoelfikar/Frontend-book-library-vuejs)
